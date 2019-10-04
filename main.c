@@ -1,20 +1,18 @@
 #include<stdio.h>
 #include<stdlib.h>
-void insertion(void);
-void deletion(void);
-void display(void);
+void insertion();
+void deletion();
+void display();
 
 struct queue{
     int num;
     struct queue *next;
 }*head=NULL,*rear=NULL;
 int main(){
-    int ch=1;
-    printf("enter your choice\n1.insertion\n2.deletion\n3.display\n4.exit\n");
+    int ch;
+    while(1){
+        printf("\nenter your choice\n1.insertion\n2.deletion\n3.display\n4.exit\n");
     scanf("%d",&ch);
-    while(ch){
-        printf("enter your choice\n");
-        scanf("%d",&ch);
         switch(ch){
             case 1:insertion();
                 break;
@@ -44,7 +42,7 @@ void insertion(){
         rear->next=new;
         rear=new;
     }
-    rear->next=NULL;
+    //rear->next=NULL;
         
 }
 
@@ -55,6 +53,7 @@ void deletion(){
     else if(head==rear){
         a=head;
         head=NULL;
+        rear=NULL;
         printf("popped element is %d\n",a->num);
         free(a);
     }
@@ -74,7 +73,7 @@ void display(){
         printf("%d ",head->num);
     else{
         a=head;
-        while(a->next!=NULL){
+        while(a!=NULL){
             printf("%d  ",a->num);
             a=a->next;
         }
