@@ -14,16 +14,16 @@ public:
         std::cout << "Marks:";
         std::cin >> marks;
     }
-    bool operator>(student& s) const;
-    bool operator<(student& s) const;
+    bool operator>(const student& s) const;
+    bool operator<(const student& s) const;
 };
-bool student::operator>(student& s) const {
+bool student::operator>(const student& s) const {
     if (this->marks > s.marks)
         return true;
     else
         return false;
 }
-bool student::operator<(student& s) const {
+bool student::operator<(const student& s) const {
     if (this->marks < s.marks)
         return true;
     else
