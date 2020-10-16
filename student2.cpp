@@ -42,9 +42,9 @@ public:
     {
          if(s1 && s2) {
              if (s1 || s2)
-                 std::cout << s1.name << " is granted direct promotion";
+                 std::cout << s1.name <<"("<<s1.roll<<") " <<"is granted direct promotion";
              else
-                 std::cout << s1.name << " is allowed to apply";
+                 std::cout << s1.name <<"("<<s1.roll<<") " << " is allowed to apply";
          }
              else
              std::cout << "Rejected";
